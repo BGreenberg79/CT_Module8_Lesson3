@@ -1,0 +1,38 @@
+/* Task 2.1 Basic CSS grid layout */
+/* Task 2.3 Advanced grid layout */
+.grid-container {  display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "hdr hdr hdr hdr"
+      "sidebar team team team"
+      "sidebar champ champ champ"
+      "sidebar ply ply ply"
+      "ftr ftr ftr ftr";
+  }
+  
+  .hdr { grid-area: hdr; }
+  
+  .ftr { grid-area: ftr; }
+  
+  .sidebar { grid-area: sidebar; justify-content: space-around; align-content: space-around; }
+  
+  .team { grid-area: team; }
+  
+  .champ { grid-area: champ; }
+  
+  .ply { grid-area: ply; }
+  
+  /* Task 2.2 Responsive Design for grid display */
+  @media screen and (max-width: 600px) {
+    .grid-container{ grid-template-columns: 1fr; grid-template-areas: 
+        "hdr"
+        "sidebar"
+        "team"
+        "champ"
+        "ply"
+        "ftr"
+        ;}
+  }
